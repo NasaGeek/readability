@@ -6,7 +6,7 @@ into its component syntactic parts.
 import nltk
 
 from nltk.tokenize import RegexpTokenizer
-import syllables_en
+from . import syllables_en
 
 TOKENIZER = RegexpTokenizer('(?u)\W+|\$[\d\.]+|\S+')
 SPECIAL_CHARS = ['.', ',', '!', '?']
