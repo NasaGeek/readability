@@ -1,6 +1,6 @@
 """
 utility functions for breaking down a given block of text
-into it's component syntactic parts.
+into its component syntactic parts.
 """
 
 import nltk
