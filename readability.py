@@ -21,7 +21,7 @@ class Readability:
         word_count = len(words)
         sentence_count = len(get_sentences(text))
         syllable_count = count_syllables(words)
-        complexwords_count = count_complex_words(text)
+        #complexwords_count = count_complex_words(text)
         avg_words_p_sentence = word_count/sentence_count
         
         self.analyzedVars = {
@@ -30,7 +30,7 @@ class Readability:
             'word_cnt': float(word_count),
             'sentence_cnt': float(sentence_count),
             'syllable_cnt': float(syllable_count),
-            'complex_word_cnt': float(complexwords_count),
+        #    'complex_word_cnt': float(complexwords_count),
             'avg_words_p_sentence': float(avg_words_p_sentence)
         }
 
@@ -53,12 +53,14 @@ class Readability:
         return round(score, 4)
         
     def GunningFogIndex(self):
+        return 0
         score = 0.0 
         if self.analyzedVars['word_cnt'] > 0.0:
             score = 0.4 * ((self.analyzedVars['avg_words_p_sentence']) + (100 * (self.analyzedVars['complex_word_cnt']/self.analyzedVars['word_cnt'])))
         return round(score, 4)
 
     def SMOGIndex(self):
+        return 0
         score = 0.0 
         if self.analyzedVars['word_cnt'] > 0.0:
             score = (math.sqrt(self.analyzedVars['complex_word_cnt']*(30/self.analyzedVars['sentence_cnt'])) + 3)
